@@ -1,0 +1,16 @@
+Third-party asset notice
+========================
+
+File:     Arrow.tga
+Origin:   taken from the "Magic Quest Tracker" addon for World of Warcraft
+          https://www.curseforge.com/wow/addons/magic-quest-tracker
+License:  GNU General Public License, version 3 (GPL-3.0), as stated on that
+          addon's CurseForge page. The full license text is in
+          COPYING-GPL-3.0.txt next to this file.
+
+This image is used unmodified-in-purpose as the direction arrow in PartyCompass.
+It remains under its original license. If you redistribute this addon, keep this
+notice and the license text with the image, or replace Arrow.tga with your own
+artwork (then this notice and the license file may be removed together with it).
+
+The Lua code in the rest of PartyCompass is separate from this asset.

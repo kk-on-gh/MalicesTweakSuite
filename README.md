@@ -10,4 +10,4 @@ Each tweak is its own addon folder; copy or symlink the folders you want into `I
 
 ## Notes
 - Target interface: `120000-120105, 16001` (retail Midnight and WoW Forever), matching EllesmereUI's TOC.
-- `PartyCompass/Media/Arrow.tga` comes from MagicQuestTracker (GPL v3). Keep the attribution, or replace the texture, before publishing publicly.
+- `PartyCompass/Media/Arrow.tga` comes from the Magic Quest Tracker addon (GPL v3); see `CREDITS.md` and `PartyCompass/Media/NOTICE.txt`. Keep them with the image, or replace the texture with your own artwork.
