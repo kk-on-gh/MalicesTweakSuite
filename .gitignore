@@ -1,0 +1,8 @@
+# editor / OS
+*.swp
+*~
+.DS_Store
+
+# local packaging output
+*.zip
+.release/

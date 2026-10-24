@@ -1,0 +1,12 @@
+## Interface: 120000, 120001, 120005, 120007, 120100, 120105, 16001
+## Title: Party Compass
+## Notes: Direction arrows toward party members: a standalone tile and arrows on EllesmereUI party/raid frames.
+## Author: Kyle
+## Version: 0.1.0
+## Dependencies: EllesmereUI
+## SavedVariables: PartyCompassDB
+
+Core.lua
+FrameArrows.lua
+Tile.lua
+Options.lua
