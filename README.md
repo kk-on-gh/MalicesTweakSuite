@@ -6,7 +6,7 @@ Each tweak is its own addon folder; copy or symlink the folders you want into `I
 
 | Addon | What it does | Status |
 |---|---|---|
-| `PartyCompass/` | Direction arrows toward party members: a movable standalone tile, plus arrows on EUI party/raid frames. Slash command `/pcompass`. | 0.1.0, untested in game |
+| `PartyCompass/` | Direction arrows toward party members: a movable standalone tile, plus arrows on EUI party/raid frames. Slash command `/pcompass`. | 0.1.0, tested in game: works well so far |
 
 ## Notes
 - Target interface: `120000-120105, 16001` (retail Midnight and WoW Forever), matching EllesmereUI's TOC.
