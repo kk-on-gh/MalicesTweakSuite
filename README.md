@@ -1,4 +1,4 @@
-# Malice's Tweaks for EllesmereUI
+# Malice's Tweak Suite for EllesmereUI
 
 Personal plugin addons for [EllesmereUI](https://www.curseforge.com/wow/addons/ellesmereui), built only on its public plugin and skinning APIs. This repo does not contain or redistribute EllesmereUI itself.
 

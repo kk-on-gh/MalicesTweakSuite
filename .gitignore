@@ -6,3 +6,6 @@
 # local packaging output
 *.zip
 .release/
+
+# local project notes
+NOTES.md
