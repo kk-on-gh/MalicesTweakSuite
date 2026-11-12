@@ -230,4 +230,4 @@ boot:SetScript("OnEvent", function(self, _, name)
 end)
 
 SLASH_PARTYCOMPASS1 = "/pcompass"
-SlashCmdList.PARTYCOMPASS = function() EllesmereUI.OpenPlugin("PartyCompass") end
+SlashCmdList.PARTYCOMPASS = function() MalicesTweakSuite.Open("Arrows") end

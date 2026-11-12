@@ -6,6 +6,7 @@
 ## Dependencies: EllesmereUI
 ## SavedVariables: PartyCompassDB
 
+Suite.lua
 Core.lua
 FrameArrows.lua
 Tile.lua

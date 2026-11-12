@@ -150,16 +150,13 @@ end
 local PAGES = { ["Standalone Tile"] = TilePage, ["Frame Arrows"] = FramesPage, ["General"] = GeneralPage }
 
 function ns.RegisterOptions()
-    EllesmereUI.RegisterPlugin("PartyCompass", {
-        label = "Malice's Tweak Suite",
-        modules = { {
-            key = "Arrows",
-            title = "Party Compass",
-            description = "Direction arrows toward your party members.",
-            pages = { "Standalone Tile", "Frame Arrows", "General" },
-            buildPage = function(pageName, parent, yOffset)
-                return PAGES[pageName](parent, yOffset)
-            end,
-        } },
+    MalicesTweakSuite.AddModule(10, {
+        key = "Arrows",
+        title = "Party Compass",
+        description = "Direction arrows toward your party members.",
+        pages = { "Standalone Tile", "Frame Arrows", "General" },
+        buildPage = function(pageName, parent, yOffset)
+            return PAGES[pageName](parent, yOffset)
+        end,
     })
 end
