@@ -1,0 +1,14 @@
+## Interface: 16001
+## Title: Field Guide Coats
+## Notes: Field Guide Forever's silver, gold and shiny marks on the EllesmereUI target portrait and nameplates.
+## Author: Kyle
+## Version: 0.1.0
+## Dependencies: EllesmereUI, FieldGuideForever
+## OptionalDeps: EllesmereUIUnitFrames, EllesmereUINameplates
+## SavedVariables: FieldGuideCoatsDB
+
+Suite.lua
+Core.lua
+Target.lua
+Plates.lua
+Options.lua

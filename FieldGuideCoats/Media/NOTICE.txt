@@ -1,0 +1,4 @@
+LaurelMask-Shiny-Mirrored.tga is Laurel-Shiny.tga from Field Guide Forever
+(https://github.com/cjber/field-guide-forever) by cjber, mirrored left to right.
+Field Guide Forever is licensed GPL-3.0-or-later; this file is distributed under
+the same license. License text: COPYING-GPL-3.0.txt.
