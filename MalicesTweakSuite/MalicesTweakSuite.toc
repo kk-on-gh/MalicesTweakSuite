@@ -2,7 +2,7 @@
 ## Title: Malice's Tweak Suite
 ## Notes: Small tweaks for EllesmereUI, in one section of its options panel. /mts opens it.
 ## Author: Kyle
-## Version: 0.2.0
+## Version: 0.1.0
 ## Dependencies: EllesmereUI
 
 Suite.lua

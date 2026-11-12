@@ -1,52 +1,52 @@
 # Malice's Tweak Suite for EllesmereUI
 
-Small quality-of-life tweaks for [EllesmereUI](https://www.curseforge.com/wow/addons/ellesmereui), built only on its public plugin API. Every module lives in one **Malice's Tweak Suite** section of the EllesmereUI options panel (`/mts` opens it), starts switched off, and does no work until you turn something on.
+Small quality-of-life tweaks for [EllesmereUI](https://www.curseforge.com/wow/addons/ellesmereui), all in one **Malice's Tweak Suite** section of the EllesmereUI options panel. Type `/mts` to open it.
 
-This suite does not contain or redistribute EllesmereUI itself.
+Every module starts switched off and does no work until you turn something on.
+
+## Installation
+
+Install via CurseForge, Wago, or a CurseForge-compatible addon manager. Or download the zip from [Releases](https://github.com/kk-on-gh/MalicesTweakSuite/releases) and extract it into your `Interface/AddOns` directory: you should end up with `MalicesTweakSuite`, `MalicesTweakSuite_PartyCompass` and `MalicesTweakSuite_FieldGuideCoats` folders.
+
+See [CHANGELOG.md](CHANGELOG.md) for release notes.
+
+## License
+
+GPL-3.0. See [LICENSE](LICENSE).
 
 ## Modules
 
 ### Party Compass
-Direction arrows toward your party members. `/pcompass` opens its options.
+Arrows pointing toward your party members, so you can find them at a glance. `/pcompass`
 
-- **Standalone tile**: an arrow, name and distance for each party member, horizontal or vertical, movable in EllesmereUI Unlock Mode.
-  - Arrow size, text size, spacing and background opacity.
-  - Arrows in class color, white or a custom color; names in class color or plain, full or first name only.
-  - Shows dead, offline and other-zone members, or hides them; hides itself when you are not grouped.
-- **Frame arrows**: a direction arrow on each EllesmereUI party and raid frame, with anchor, offset, size, color, optional distance text and a "hide within" range.
-- Distances in yards or meters, an adjustable update rate, and a test mode for styling the tile while solo.
+- **Standalone tile:** an arrow, name and distance for each party member. Move it in EllesmereUI's Unlock Mode, lay it out horizontally or vertically, and style the arrows, text and background.
+- **Frame arrows:** a direction arrow on each EllesmereUI party and raid frame, with optional distance text.
+- Distances in yards or meters. Works outside instances, where the game provides party positions.
 
 ### Field Guide Coats
-*Needs [Field Guide Forever](https://www.curseforge.com/wow/addons/field-guide-forever). WoW Forever only.* `/fgcoats` opens its options.
+*Needs [Field Guide Forever](https://www.curseforge.com/wow/addons/field-guide-forever). WoW Forever only.* `/fgcoats`
 
-Field Guide Forever marks silver, gold and shiny creatures on Blizzard's target frame and nameplates, which EllesmereUI replaces. This module draws those marks on EllesmereUI's frames instead.
+Field Guide Forever marks silver, gold and shiny creatures, but it draws those marks on Blizzard's frames, which EllesmereUI replaces. This module puts them back, on EllesmereUI's frames:
 
-- **Portrait laurel**: Field Guide's laurel around the EllesmereUI target portrait.
-  - Size, X/Y offset, and which side the leaves fan out to (Auto points them away from the frame).
-  - Field Guide's own light sweep across shiny laurels.
-  - Optionally left off rare, elite and boss targets, which EllesmereUI's portrait dragon already marks.
-- **Nameplate mark**: Field Guide's quality mark beside the EllesmereUI nameplate health bar, with size, opacity, side, gap and offset.
-- **Found coats**, on both:
-  - A glow on coats this character has not found on that species yet.
-  - Fading and partial desaturation on coats it has, adjustable, with an optional faint shimmer kept on found shinies.
-  - Updates the moment you find a coat.
-- **Show From**: show every coat, or only gold and up, or only shiny.
-- **Preview**: show any coat, as new or found, on your target and every nameplate, to place and style the marks without hunting for one.
+![image](https://cdn.jsdelivr.net/gh/kk-on-gh/MalicesTweakSuite-Media@master/Screenshots/FGFLaurel.png)
+
+- **Target portrait:** Field Guide's laurel around your target's portrait, with the shiny light sweep.
+- **Nameplates:** Field Guide's quality mark beside the health bar.
+- **Found coats:** optionally make coats you haven't collected on that creature yet glow, and fade the ones you have, so you know at a glance what's worth chasing.
+- Size, position and opacity options, plus a preview to set it all up without hunting for a shiny.
 
 ## Requirements
 
-- EllesmereUI (the Unit Frames and Nameplates modules for Field Guide Coats).
-- Retail (Midnight) or WoW Forever. Field Guide Coats loads only on WoW Forever, with Field Guide Forever installed.
+- EllesmereUI.
+- Retail (Midnight) or WoW Forever. Field Guide Coats needs WoW Forever and Field Guide Forever.
 
-## Credits
+## Notes
 
-- `MalicesTweakSuite_PartyCompass/Media/Arrow.tga` comes from the Magic Quest Tracker addon (GPL v3).
-- `MalicesTweakSuite_FieldGuideCoats/Media/LaurelMask-Shiny-Mirrored.tga` is Field Guide Forever's shiny laurel, mirrored (GPL-3.0-or-later). The other laurels are loaded from Field Guide Forever's own folder at runtime.
+- Not affiliated with EllesmereUI or Field Guide Forever. This addon only uses EllesmereUI's public plugin API and contains none of its code.
+- Party Compass's arrow art comes from Magic Quest Tracker (GPL v3). Field Guide Coats uses Field Guide Forever's laurel art (GPL-3.0-or-later). See the included notices.
 
-See [CREDITS.md](CREDITS.md) and each module's `Media/NOTICE.txt`.
+## A few words
 
-## Development
+Malice's Tweak Suite is where I put the small things I wanted from EllesmereUI that it doesn't do (yet). If something breaks, feels awkward, or you've got an idea for it, I really want to hear about it. Bug reports, suggestions, and pull requests are all welcome.
 
-- `MalicesTweakSuite/` is the core addon: it owns the shared EllesmereUI section and the `/mts` command. Each module is its own folder, `MalicesTweakSuite_<Module>/`, with `## Group: MalicesTweakSuite` (the game's AddOns list nests it under the core), `## Dependencies: EllesmereUI, MalicesTweakSuite`, and its own SavedVariables. A module adds itself with `MalicesTweakSuite.AddModule(order, spec)` from `ADDON_LOADED`.
-- Copy or symlink all the folders into `Interface/AddOns/`; one CurseForge project ships them together, as EllesmereUI does.
-- One version for the whole suite, in every TOC; history in [CHANGELOG.md](CHANGELOG.md).
+I used AI assistance to build it. I know the reputation AI-made addons have right now, so for what it's worth: every feature here was designed, tested in game, and argued over by an actual person who uses it.

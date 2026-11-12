@@ -10,3 +10,10 @@
 # local project notes
 NOTES.md
 .vscode/
+
+# local publishing material (CurseForge page text, screenshots)
+CurseForge-Page.md
+Screenshots/
+
+# Claude Code project skills and settings
+.claude/

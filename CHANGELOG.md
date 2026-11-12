@@ -2,7 +2,7 @@
 
 Malice's Tweak Suite for EllesmereUI. One version for the whole suite.
 
-## [0.2.0] - Unreleased
+## [0.2.0]
 
 ### Added
 - **Field Guide Coats** module (needs Field Guide Forever, WoW Forever only): Field Guide Forever's silver, gold and shiny marks on EllesmereUI frames, which replace the Blizzard frames Field Guide draws on.
