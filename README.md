@@ -42,7 +42,7 @@ Field Guide Forever marks silver, gold and shiny creatures, but it draws those m
 ## Requirements
 
 - EllesmereUI.
-- Retail (Midnight) or WoW Forever. Field Guide Coats needs WoW Forever and Field Guide Forever.
+- WoW Forever. Field Guide Coats also needs Field Guide Forever.
 
 ## Notes
 

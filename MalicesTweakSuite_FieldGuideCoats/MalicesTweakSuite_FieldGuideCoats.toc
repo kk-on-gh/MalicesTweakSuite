@@ -2,7 +2,10 @@
 ## Title: Malice's Tweak Suite: Field Guide Coats
 ## Notes: Field Guide Forever's silver, gold and shiny marks on the EllesmereUI target portrait and nameplates.
 ## Author: Kyle
-## Version: 0.1.0
+## Version: 0.1
+## X-License: GPL-3.0
+## X-Curse-Project-ID: 1801139
+## X-Wago-ID: L6JbAY6v
 ## Group: MalicesTweakSuite
 ## Dependencies: EllesmereUI, MalicesTweakSuite, FieldGuideForever
 ## OptionalDeps: EllesmereUIUnitFrames, EllesmereUINameplates
