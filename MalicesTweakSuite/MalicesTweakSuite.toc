@@ -1,0 +1,8 @@
+## Interface: 120000, 120001, 120005, 120007, 120100, 120105, 16001
+## Title: Malice's Tweak Suite
+## Notes: Small tweaks for EllesmereUI, in one section of its options panel. /mts opens it.
+## Author: Kyle
+## Version: 0.2.0
+## Dependencies: EllesmereUI
+
+Suite.lua

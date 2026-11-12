@@ -1,25 +1,27 @@
 # Changelog
 
-One section per addon in this repo. Tags are per addon: `<Addon>-v<version>`.
+Malice's Tweak Suite for EllesmereUI. One version for the whole suite.
 
-## FieldGuideCoats
+## [0.2.0] - Unreleased
 
-### [0.1.0] - Unreleased
-- Field Guide Forever's laurel around the EllesmereUI target portrait, with size, offset, leaves side, minimum coat, shiny shimmer and a rare/elite/boss hide.
-- Field Guide Forever's quality mark beside EllesmereUI nameplate health bars, with size, opacity, side, gap, offset and minimum coat.
-- Shiny Shimmer: Field Guide's own light sweep across the shiny laurel, masked to the laurel (a mirrored mask ships for a mirrored laurel).
-- Found Coats options on both: glow (laurel pulse, nameplate ping) on a coat this character has not found on that species yet, and partial desaturation plus fade (Found Desaturation, Found Opacity) on one it has. Shimmer Found Shinies keeps a faded sweep on a dimmed shiny. Updates the moment a coat is found.
-- Preview Coat and Preview As (New / Found) to place and style the marks without finding a silver, gold or shiny.
-- Uses `EllesmereUI.GetNameplateForUnit` when EUI has it, otherwise EUI's exposed plate table.
-- Every feature is off by default and only registers events while enabled.
+### Added
+- **Field Guide Coats** module (needs Field Guide Forever, WoW Forever only): Field Guide Forever's silver, gold and shiny marks on EllesmereUI frames, which replace the Blizzard frames Field Guide draws on.
+  - Laurel around the EllesmereUI target portrait, with size, offset, leaves side, and an optional hide on rare, elite and boss targets.
+  - Field Guide's light sweep across shiny laurels.
+  - Quality mark beside EllesmereUI nameplate health bars, with size, opacity, side, gap and offset.
+  - Found coats: an optional glow on coats you have not found on that species yet, and optional fading and partial desaturation on ones you have, with a faint shimmer kept on found shinies.
+  - Show From: every coat, gold and up, or shiny only.
+  - Preview any coat, as new or found, to place and style the marks.
 
-## PartyCompass
+### Changed
+- Malice's Tweak Suite is now one addon with modules: a core `MalicesTweakSuite` folder plus a `MalicesTweakSuite_<Module>` folder per module, grouped under the core in the game's AddOns list. Party Compass's folder is now `MalicesTweakSuite_PartyCompass`.
+- Every module now shares one **Malice's Tweak Suite** section in the EllesmereUI options panel. `/mts` opens it.
 
-### [Unreleased]
-- Shares the "Malice's Tweak Suite" EUI panel section with the other suite addons (`Suite.lua`).
+## [0.1.0] - 2026-10-24
 
-### [0.1.0] - 2026-10-24
-- Standalone tile with a direction arrow, name and distance toward a party member. Movable in EllesmereUI unlock mode.
-- Direction arrows on EllesmereUI party and raid frames.
-- Own section in the EllesmereUI panel. `/pcompass` opens it.
-- Every feature is off by default and only runs while enabled. No per-frame polling.
+### Added
+- **Party Compass** module: direction arrows toward party members.
+  - Standalone tile with an arrow, name and distance per member, movable in EllesmereUI Unlock Mode.
+  - Direction arrows on EllesmereUI party and raid frames.
+  - `/pcompass` opens its options.
+- Every feature is off by default and only runs while enabled.

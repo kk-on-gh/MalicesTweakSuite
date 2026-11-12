@@ -20,7 +20,7 @@ local NATIVE = { rare = true, rareelite = true, elite = true, worldboss = true }
 -- FGF's shiny sheen: the loot toast sweep, on FGF's timing, masked to the laurel.
 -- Masks do not reliably mirror, so a mirrored laurel uses a pre-mirrored mask.
 local SHEEN_ATLAS = "loottoast-sheen"
-local MIRRORED_MASK = "Interface\\AddOns\\FieldGuideCoats\\Media\\LaurelMask-Shiny-Mirrored.tga"
+local MIRRORED_MASK = "Interface\\AddOns\\MalicesTweakSuite_FieldGuideCoats\\Media\\LaurelMask-Shiny-Mirrored.tga"
 
 local holder, laurel, glow, pulse
 local sheen, sheenMask, sheenAnim, sheenTravel, sheenAspect, sheenSize

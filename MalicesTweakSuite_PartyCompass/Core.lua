@@ -11,7 +11,7 @@ local ADDON, ns = ...
 
 local atan2, sqrt = math.atan2, math.sqrt
 
-ns.ARROW = "Interface\\AddOns\\PartyCompass\\Media\\Arrow"
+ns.ARROW = "Interface\\AddOns\\MalicesTweakSuite_PartyCompass\\Media\\Arrow"
 
 local DEFAULTS = {
     general = { units = "YARDS", interval = 0.05 },
