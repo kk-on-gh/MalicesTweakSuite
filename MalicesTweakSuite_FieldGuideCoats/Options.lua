@@ -32,11 +32,12 @@ end
 
 local function PreviewCfg()
     return { type = "dropdown", text = "Preview Coat", values = PREVIEW_VALUES, order = PREVIEW_ORDER,
-        tooltip = "Draw this coat on your current target and every nameplate, so you can place the marks. Not saved.",
+        tooltip = "Draw this coat on your current target and every nameplate, so you can place the marks, and play its Sound Alert as a real one would. Not saved.",
         getValue = function() return ns.preview or "OFF" end,
         setValue = function(v)
             ns.preview = (v ~= "OFF") and v or nil
             ns.Refresh()
+            ns.Alerts.PlayPreview()
         end }
 end
 
@@ -49,6 +50,7 @@ local function PreviewFoundCfg()
         setValue = function(v)
             ns.previewFound = (v == "FOUND")
             ns.Refresh()
+            ns.Alerts.PlayPreview()
         end }
 end
 
@@ -145,7 +147,8 @@ local function PlatesPage(parent, y)
     y = y - h
     _, h = W:DualRow(parent, y,
         D(Slider("plates", "y", "Y Offset", -20, 20, 1)),
-        EllesmereUI.BlankRowCfg())
+        D(Toggle("plates", "hideFGF", "Hide Field Guide's Mark",
+            "Hide Field Guide's own nameplate mark, which otherwise shows beside this one.")))
     y = y - h
     y = FoundSection(W, parent, y, "plates", D,
         "Ping the mark while it is a coat this character has not found on that species yet.")
@@ -156,7 +159,63 @@ local function PlatesPage(parent, y)
     return math.abs(y)
 end
 
-local PAGES = { ["Target Portrait"] = TargetPage, ["Nameplates"] = PlatesPage }
+local function SoundCfg(key, text, D)
+    local paths, names, order = ns.Alerts.Sounds()
+    local values
+    if EllesmereUI.BuildSoundDropdownValues then
+        values, order = EllesmereUI.BuildSoundDropdownValues(paths, names, order)
+        if values._menuOpts then values._menuOpts.iconOnClick = ns.Alerts.PlayKey end
+    else
+        values = {}
+        for k, v in pairs(names) do values[k] = v end
+    end
+    return D(Dropdown("alerts", key, text, values, order, "The speaker icon previews a sound."))
+end
+
+local function AlertsPage(parent, y)
+    local W = EllesmereUI.Widgets
+    local _, h
+    local off = function() return not ns.db.alerts.enabled end
+    local function D(cfg) cfg.disabled = off; cfg.disabledTooltip = "Sound Alert"; return cfg end
+
+    _, h = W:SectionHeader(parent, "SOUND ALERT", y); y = y - h
+    _, h = W:DualRow(parent, y,
+        Toggle("alerts", "enabled", "Sound Alert",
+            "Play a sound when a coated mob's nameplate comes into range. Needs nameplates shown; range follows the nameplate distance.", true),
+        D(Dropdown("alerts", "minTier", "Alert From", TIER_VALUES, TIER_ORDER)))
+    y = y - h
+    local rep = D(Slider("alerts", "repeatSec", "Repeat Every (sec)", 0, 60, 1))
+    rep.tooltip = "0 alerts once per spawn. Otherwise the sound repeats while a matching mob stays in range."
+    _, h = W:DualRow(parent, y,
+        D(Dropdown("alerts", "filter", "Alert On",
+            { ANY = "Any Coat", NEW_COAT = "Coat Not Found Yet", NEW_SPECIES = "Species Not Recorded" },
+            { "ANY", "NEW_COAT", "NEW_SPECIES" },
+            "Coat Not Found Yet: this character has not found that coat on that species. Species Not Recorded: this character has no specimen of that species at all.")),
+        rep)
+    y = y - h
+    _, h = W:DualRow(parent, y,
+        D(Toggle("alerts", "stopOnTarget", "Stop Once Targeted",
+            "Targeting a mob silences it for the rest of the session, so the repeat stops.")),
+        D(Toggle("alerts", "skipTapped", "Skip Tapped Mobs", "No alert for mobs another player has already tagged.")))
+    y = y - h
+    _, h = W:DualRow(parent, y,
+        D(Toggle("alerts", "message", "Screen Message", "Also name the mob in the middle of the screen when it is first seen.")),
+        EllesmereUI.BlankRowCfg())
+    y = y - h
+
+    _, h = W:SectionHeader(parent, "SOUNDS", y); y = y - h
+    _, h = W:DualRow(parent, y, SoundCfg("soundSilver", "Silver Sound", D), SoundCfg("soundGold", "Gold Sound", D))
+    y = y - h
+    _, h = W:DualRow(parent, y, SoundCfg("soundShiny", "Shiny Sound", D), EllesmereUI.BlankRowCfg())
+    y = y - h
+
+    _, h = W:SectionHeader(parent, "PREVIEW", y); y = y - h
+    _, h = W:DualRow(parent, y, PreviewCfg(), PreviewFoundCfg())
+    y = y - h
+    return math.abs(y)
+end
+
+local PAGES = { ["Target Portrait"] = TargetPage, ["Nameplates"] = PlatesPage, ["Sound Alert"] = AlertsPage }
 
 local function EndPreview()
     if ns.preview then
@@ -171,7 +230,7 @@ function ns.RegisterOptions()
         key = "FieldGuideCoats",
         title = "Field Guide Coats",
         description = "Field Guide Forever's silver, gold and shiny marks on EllesmereUI frames.",
-        pages = { "Target Portrait", "Nameplates" },
+        pages = { "Target Portrait", "Nameplates", "Sound Alert" },
         buildPage = function(pageName, parent, yOffset)
             return PAGES[pageName](parent, yOffset)
         end,

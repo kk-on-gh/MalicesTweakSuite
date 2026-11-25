@@ -2,7 +2,7 @@
 ## Title: Malice's Tweak Suite: Party Compass
 ## Notes: Direction arrows toward party members: a standalone tile and arrows on EllesmereUI party/raid frames.
 ## Author: Kyle
-## Version: 0.1
+## Version: 0.2
 ## X-License: GPL-3.0
 ## X-Curse-Project-ID: 1801139
 ## X-Wago-ID: L6JbAY6v

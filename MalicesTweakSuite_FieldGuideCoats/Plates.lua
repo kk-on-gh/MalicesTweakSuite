@@ -106,11 +106,46 @@ local function Paint(unit)
     shown[unit] = mark
 end
 
+-- FGF's own mark: a texture it keeps on the Blizzard nameplate base, so EUI
+-- does not hide it. mtsWanted tracks FGF's intended shown state while hidden.
+local function Suppressing()
+    local db = ns.db.plates
+    return db.enabled and db.hideFGF
+end
+
+local function OnFGFShow(marker)
+    if Suppressing() then
+        marker:Hide()
+        marker.mtsWanted = true
+    end
+end
+
+local function OnFGFHide(marker)
+    marker.mtsWanted = false
+end
+
+local function SyncFGF(nameplate)
+    local marker = nameplate and nameplate.FGFRarityMarker
+    if type(marker) ~= "table" or not marker.Hide then return end
+    if not marker.mtsHooked then
+        marker.mtsHooked = true
+        hooksecurefunc(marker, "Show", OnFGFShow)
+        hooksecurefunc(marker, "Hide", OnFGFHide)
+    end
+    if Suppressing() then
+        if marker:IsShown() then OnFGFShow(marker) end
+    elseif marker.mtsWanted then
+        marker.mtsWanted = false
+        marker:Show()
+    end
+end
+
 -- EUI builds its plate in the same event; read it on the next frame.
 local function Flush()
     flushPending = false
     for unit in pairs(queued) do
         queued[unit] = nil
+        SyncFGF(C_NamePlate.GetNamePlateForUnit(unit))
         Paint(unit)
     end
 end
@@ -134,6 +169,9 @@ function Plates.RefreshAll()
     for unit, mark in pairs(shown) do
         HideMark(mark)
         shown[unit] = nil
+    end
+    for _, nameplate in ipairs(C_NamePlate.GetNamePlates()) do
+        SyncFGF(nameplate)
     end
     if not ns.db.plates.enabled then return end
     for _, nameplate in ipairs(C_NamePlate.GetNamePlates()) do

@@ -2,6 +2,16 @@
 
 Malice's Tweak Suite for EllesmereUI. One version for the whole suite.
 
+## [0.2] - 2026-11-24
+
+### Added
+- **Hawk Watch** module (hunters with the Summon Hawk talent): a movable tile showing which Summon Hawk hawks are out, their time left, and the cooldown shared with Arcane Shot. Optional recast hint when a hawk is missing or the older one is about to leave. Off by default. `/hawkwatch` opens its options.
+- **MobInfo2 Button** module (needs MobInfo2): EllesmereUI's minimap skipped MobInfo2's minimap button because its name ends in a number. This module lets the minimap group it with the other addon buttons. MobInfo2's own Show Minimap Button option still applies. Off by default.
+- **Field Guide Coats:** Sound Alert page. A sound when a coated mob's nameplate comes into range, with a sound per coat, Alert From, and Alert On: any coat, a coat not found yet on that species, or a species not recorded at all. Optional repeat every few seconds while the mob stays in range, silenced once you target it. Skips mobs tapped by other players, and can also name the mob on screen.
+
+### Fixed
+- **Field Guide Coats:** real coats showed two nameplate marks, Field Guide's own and this one. Field Guide's is now hidden while the nameplate mark is on (Hide Field Guide's Mark, on by default).
+
 ## [0.1] - 2026-11-12
 
 First release.

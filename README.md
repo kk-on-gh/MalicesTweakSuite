@@ -8,7 +8,7 @@ Every module starts switched off and does no work until you turn something on.
 
 ## Installation
 
-Install via CurseForge, Wago, or a CurseForge-compatible addon manager. Or download the zip from [Releases](https://github.com/kk-on-gh/MalicesTweakSuite/releases) and extract it into your `Interface/AddOns` directory: you should end up with `MalicesTweakSuite`, `MalicesTweakSuite_PartyCompass` and `MalicesTweakSuite_FieldGuideCoats` folders.
+Install via CurseForge, Wago, or a CurseForge-compatible addon manager. Or download the zip from [Releases](https://github.com/kk-on-gh/MalicesTweakSuite/releases) and extract it into your `Interface/AddOns` directory: you should end up with `MalicesTweakSuite`, `MalicesTweakSuite_PartyCompass`, `MalicesTweakSuite_FieldGuideCoats`, `MalicesTweakSuite_MobInfoButton` and `MalicesTweakSuite_HawkWatch` folders.
 
 See [CHANGELOG.md](CHANGELOG.md) for release notes.
 
@@ -37,12 +37,25 @@ Field Guide Forever marks silver, gold and shiny creatures, but it draws those m
 - **Target portrait:** Field Guide's laurel around your target's portrait, with the shiny light sweep.
 - **Nameplates:** Field Guide's quality mark beside the health bar.
 - **Found coats:** optionally make coats you haven't collected on that creature yet glow, and fade the ones you have, so you know at a glance what's worth chasing.
+- **Sound alert:** optionally play a sound when a coated creature's nameplate comes into range, with a sound per coat. Alert on any coat, only coats you haven't found on that creature yet, or only creatures you haven't recorded at all, with an optional repeat until you target it.
 - Size, position and opacity options, plus a preview to set it all up without hunting for a shiny.
+
+### MobInfo2 Button
+
+*Needs [MobInfo2](https://www.curseforge.com/wow/addons/mobinfo2).* This module won't load without it.
+
+EllesmereUI's minimap groups addon buttons, but it skips MobInfo2's, so it sits loose on the map. This module lets EllesmereUI group it with the rest. MobInfo2's own Show Minimap Button option still hides it.
+
+### Hawk Watch
+
+*Hunters with the Summon Hawk talent.* Does nothing without it. `/hawkwatch`
+
+A movable tile for Summon Hawk: which of your two hawks are out, how long each has left, and the cooldown Summon Hawk shares with Arcane Shot. Optionally outlines the tile in combat when a hawk is missing or the older one is about to leave.
 
 ## Requirements
 
 - EllesmereUI.
-- WoW Forever. Field Guide Coats also needs Field Guide Forever.
+- WoW Forever. Field Guide Coats also needs Field Guide Forever, and MobInfo2 Button needs MobInfo2.
 
 ## Notes
 
